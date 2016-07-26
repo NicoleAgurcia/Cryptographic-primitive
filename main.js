@@ -7,13 +7,9 @@ const message = algorithm.result;
 
 
 
- message("CUADERNO  ",3,encrypt);
+/* message("xyz",3,encrypt);
  message("fxdghuqr",3,decrypt);
+*/
+ message("Hola",3,encrypt);
+ message("abc",3,decrypt);
 
-
-
-/*
-
-var cadena = 'Texto De Prueba';
-cadena = cadena.toLowerCase();
-console.log(cadena);*/
