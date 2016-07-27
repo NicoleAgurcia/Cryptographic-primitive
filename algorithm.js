@@ -7,8 +7,7 @@ const isLowerCase = text => text === text.toLowerCase(); //verificar si es minus
 
 const toAscii = (text,move,x) => {
 	const ascii = text.charCodeAt()+move;
-	const upper = 'A'.charCodeAt();
-	const lower = 'a'.charCodeAt();
+	const upper = 'A'.charCodeAt(), lower = 'a'.charCodeAt();
 		if (isLowerCase(text)){ 
 			if (ascii>(lower+25)||ascii<lower) 
 				return ascii+x;
@@ -21,7 +20,7 @@ const encrypt = (text,move) =>{
   const ArrAscii = separateString(text).map(text => toAscii(text, move,-26));
   return ArrAscii.map(toChar).join("");
 }
- //revisar para x y z  se le debe sumar 26
+ 
 const decrypt = (text,move) =>{
   const ArrAscii = separateString(text).map(text => toAscii(text,-move,26));
   return ArrAscii.map(toChar).join("");
