@@ -7,9 +7,11 @@ const message = algorithm.result;
 
 
 
-/* message("xyz",3,encrypt);
- message("fxdghuqr",3,decrypt);
-*/
- message("Hola",3,encrypt);
- message("abc",3,decrypt);
+  message("cuaderno",3,encrypt);
+  message("fxdghuqr",3,decrypt);
+  message("Hola",3,encrypt);
+  message("xyz",6,encrypt);
+  message("Krod",3,decrypt);
+  message("abc",4,decrypt);
+ 
 

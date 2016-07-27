@@ -5,23 +5,25 @@ const toChar = (arr) => String.fromCharCode(arr);
 const isLowerCase = text => text === text.toLowerCase(); //verificar si es minuscula
 
 
-const toAscii = (text,move) => {
+const toAscii = (text,move,x) => {
 	const ascii = text.charCodeAt()+move;
-		if (isLowerCase(text)){
-			if (ascii > ('a'.charCodeAt()+25))
-				return ascii-26;
-		} else if (ascii > ('A'.charCodeAt()+25))
-				return ascii-26;
+	const upper = 'A'.charCodeAt();
+	const lower = 'a'.charCodeAt();
+		if (isLowerCase(text)){ 
+			if (ascii>(lower+25)||ascii<lower) 
+				return ascii+x;
+		} else if (ascii>(upper+25) || ascii<upper)
+				return ascii+x;
 	return ascii;
 }
 	
 const encrypt = (text,move) =>{
-  const ArrAscii = separateString(text).map(text => toAscii(text, move));
+  const ArrAscii = separateString(text).map(text => toAscii(text, move,-26));
   return ArrAscii.map(toChar).join("");
 }
  //revisar para x y z  se le debe sumar 26
 const decrypt = (text,move) =>{
-  const ArrAscii = separateString(text).map(text => toAscii(text, move*-1));
+  const ArrAscii = separateString(text).map(text => toAscii(text,-move,26));
   return ArrAscii.map(toChar).join("");
 }
 
