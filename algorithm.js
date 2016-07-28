@@ -5,14 +5,14 @@ const toChar = (arr) => String.fromCharCode(arr);
 const isLowerCase = text => text === text.toLowerCase(); //verificar si es minuscula
 
 
-const toAscii = (text,move,x) => {
+const toAscii = (text,move,option) => {
 	const ascii = text.charCodeAt()+move;
 	const upper = 'A'.charCodeAt(), lower = 'a'.charCodeAt();
 		if (isLowerCase(text)){ 
 			if (ascii>(lower+25)||ascii<lower) 
-				return ascii+x;
+				return ascii+option;
 		} else if (ascii>(upper+25) || ascii<upper)
-				return ascii+x;
+				return ascii+option;
 	return ascii;
 }
 	
